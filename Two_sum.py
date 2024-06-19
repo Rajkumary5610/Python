@@ -22,3 +22,4 @@ Output: [0,1]
 Author:https://github.com/Rajkumar4862
 
 '''
+print("Hello World")
