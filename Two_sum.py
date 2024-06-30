@@ -19,7 +19,31 @@ Example 3:
 Input: nums = [3,3], target = 6
 Output: [0,1]
 
-Author:https://github.com/Rajkumar4862
+Author:https://github.com/Rajkumary5610
 
 '''
-print("let's Begin")
+from typing import List
+class Solution:
+    def Twosum(self,num: List[int], target: int) -> List[int]:
+        n = len(num)
+        for i in range(n-1):
+            for j in range(i+1,n):
+                if num[i] + num[j] == target:
+                    return [i,j]
+lst = []
+ 
+# number of elements as input
+n = int(input("Enter number of elements : "))
+ 
+# iterating till the range
+for i in range(0, n):
+    ele = int(input())
+    # adding the element
+    lst.append(ele)  
+ 
+#n = list(input("Enter the list number's"))
+#for i in range(10):
+   # n = input()
+t = int(input("Enter the target \n"))
+s = Solution()
+print(s.Twosum(lst,t))
