@@ -12,6 +12,8 @@ Example 2:
 Input: num1 = -10, num2 = 4
 Output: -6
 Explanation: num1 + num2 = -6, so -6 is returned.
+
+Author : http://github.com/Rajkumary5610
 '''
 
 class Solution:
