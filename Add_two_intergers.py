@@ -19,7 +19,6 @@ Author : http://github.com/Rajkumary5610
 class Solution:
     def addtwointerger(self,num1: int, num2: int) -> int:
         return num1 + num2
-
 n = input("Enter the first number \n")
 m = input("Enter the second number \n")
 s = Solution()
