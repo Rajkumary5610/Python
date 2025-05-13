@@ -1,4 +1,4 @@
-# countdown time
+# countdown time programme in python
 
 import time         #importing time module
 
