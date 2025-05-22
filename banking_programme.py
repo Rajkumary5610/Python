@@ -32,7 +32,7 @@ def withdraw(balance):
 
     else:
         return amount
-        print()
+
 
 def main():
     balance = 0
