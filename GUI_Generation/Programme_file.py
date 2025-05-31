@@ -2,7 +2,8 @@
 
 import sys
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QLabel,
-                             QWidget, QVBoxLayout, QHBoxLayout, QGridLayout)        # Used to create window and application
+                             QWidget, QVBoxLayout, QHBoxLayout,
+                             QGridLayout, QPushButton)                              # Used to create window and application
 from PyQt5.QtGui import QIcon, QFont, QPixmap                                       # Used to create Icon of the Window
 from PyQt5.QtCore import Qt
 
@@ -12,6 +13,8 @@ class mainwindow(QMainWindow):
         self.setWindowTitle('My cool first GUI')                                    # Naming the window
         self.setGeometry(600, 250, 400, 400)                                        # Adjusting the window axis and size
         self.setWindowIcon(QIcon('Profile_image.jpg'))                              # Setting window icon
+        self.button = QPushButton('Click me', self)
+        self.label = QLabel('Hello!', self)
         self.initUI()
 
         # Label setting
@@ -61,21 +64,21 @@ class mainwindow(QMainWindow):
         #                  label.height())
 
     # Layout setting
-    def initUI(self):
-        central_widget = QWidget()
-        self.setCentralWidget(central_widget)
+    #def initUI(self):
+        # central_widget = QWidget()
+        # self.setCentralWidget(central_widget)
 
-        label1 = QLabel("#1", self)
-        label2 = QLabel("#2", self)
-        label3 = QLabel("#3", self)
-        label4 = QLabel("#4", self)
-        label5 = QLabel("#5", self)
+        # label1 = QLabel("#1", self)
+        # label2 = QLabel("#2", self)
+        # label3 = QLabel("#3", self)
+        # label4 = QLabel("#4", self)
+        # label5 = QLabel("#5", self)
 
-        label1.setStyleSheet("background-color: red;")
-        label2.setStyleSheet("background-color: yellow;")
-        label3.setStyleSheet("background-color: green;")
-        label4.setStyleSheet("background-color: blue;")
-        label5.setStyleSheet("background-color: purple;")
+        # label1.setStyleSheet("background-color: red;")
+        # label2.setStyleSheet("background-color: yellow;")
+        # label3.setStyleSheet("background-color: green;")
+        # label4.setStyleSheet("background-color: blue;")
+        # label5.setStyleSheet("background-color: purple;")
 
         # vbox = QVBoxLayout()
         # vbox.addWidget(label1)
@@ -93,13 +96,29 @@ class mainwindow(QMainWindow):
         # hbox.addWidget(label5)
         # central_widget.setLayout(hbox)
 
-        grid = QGridLayout()
-        grid.addWidget(label1, 0, 0)
-        grid.addWidget(label2, 0, 1)
-        grid.addWidget(label3, 1, 0)
-        grid.addWidget(label4, 1, 1)
-        grid.addWidget(label5, 2, 3)
-        central_widget.setLayout(grid)
+        # grid = QGridLayout()
+        # grid.addWidget(label1, 0, 0)
+        # grid.addWidget(label2, 0, 1)
+        # grid.addWidget(label3, 1, 0)
+        # grid.addWidget(label4, 1, 1)
+        # grid.addWidget(label5, 2, 3)
+        # central_widget.setLayout(grid)
+
+    # Pushing Button
+
+    def initUI(self):
+        self.button.setGeometry(100, 100, 200, 100)
+        self.button.setStyleSheet("font-size: 30px;")
+        self.button.clicked.connect(self.on_click)
+
+        self.label.setGeometry(130, 200, 200, 100)
+        self.label.setStyleSheet("font-size: 60px;")
+
+    def on_click(self):
+        self.lebel.setText("Goodbye ")
+        print("Button Clicked")
+        self.button.setText('Clicked')
+        self.button.setDisabled(True)
 
 class main():
     app = QApplication(sys.argv)
